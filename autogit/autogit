@@ -1,0 +1,7 @@
+#! /usr/bin/python3
+import os
+
+data = str(input("INSERT COMMIT!: "))
+#change the path and the "origin master" if needed to
+#drop this file to /bin if you want to just type autogit in terminal 
+os.system("cd ~/Desktop/py/code/py/PJ/gtn/Advanced-shet && git add . && git commit -m " + data + " && git push origin master")
