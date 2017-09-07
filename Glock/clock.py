@@ -9,7 +9,17 @@ import webbrowser
 import random
 import os
 
+f = open("YT.txt", "w")
+data = str(raw_input("INSERT URL TO OPEN, IF NO (None): "))
+if data == "None" or data == "none":
+	f.write("https://9gag.com/")
+	f.close
+else:
+	f.write(data)
+	f.close
 
+
+urli = open("YT.txt", "r")
 
 #Check if the user has the YT.txt file in the same area as alarm.py
 if os.path.isfile("YT.txt") == False:
@@ -51,7 +61,7 @@ if Time == Alarm:
 
 	print "Time to Wake up!"
 	#from the variable content, a random link is chosen and then that link is stored in random_video variable
-	random_video = random.choice(content)
+	#random_video = random.choice(content)
 	#Using the webbrowser library, it opens this youtube video link.
 	#The videos are varius aphex twin songs
-webbrowser.open(random_video)
+webbrowser.open(urli.read())
